@@ -6,12 +6,12 @@ import (
 	"os"
 	"time"
 
-	pb "github.com/kawabatas/go-grpc-sample2/proto"
+	pb "github.com/kawabatas/go-grpc-sample2/proto/hello"
 	"google.golang.org/grpc"
 )
 
 const (
-	address     = "localhost:50051"
+	address     = "localhost:5001"
 	defaultName = "world"
 )
 

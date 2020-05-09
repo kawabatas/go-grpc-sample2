@@ -5,12 +5,12 @@ import (
 	"log"
 	"net"
 
-	pb "github.com/kawabatas/go-grpc-sample2/proto"
+	pb "github.com/kawabatas/go-grpc-sample2/proto/hello"
 	"google.golang.org/grpc"
 )
 
 const (
-	port = ":50051"
+	port = ":5001"
 )
 
 // server is used to implement helloworld.GreeterServer.
@@ -31,6 +31,7 @@ func main() {
 	}
 	s := grpc.NewServer()
 	pb.RegisterGreeterServer(s, &server{})
+	log.Println("grpc server starting...")
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}
